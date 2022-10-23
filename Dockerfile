@@ -1,4 +1,4 @@
-FROM mysql:8
+FROM mariadb
 
 # The base MySQL image will run all SQL files in this directory. For more
 # information, see "Initializing a fresh instance" at
