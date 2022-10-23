@@ -1,4 +1,4 @@
-FROM mysql:5
+FROM mysql:8
 
 # The base MySQL image will run all SQL files in this directory. For more
 # information, see "Initializing a fresh instance" at
@@ -7,6 +7,8 @@ ENV MYSQL_ROOT_PASSWORD kreta
 
 #COPY KretaWebApi/Mysql/sql/*.sql /docker-entrypoint-initdb.d/
 COPY sql/*.sql /docker-entrypoint-initdb.d/
+
+COPY config/user.cnf /etc/mysql/my.cnf
 
 RUN chown -R mysql:mysql /docker-entrypoint-initdb.d/
 
